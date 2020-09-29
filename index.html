@@ -16,12 +16,12 @@
     <script>
       var timedata = [
         {
-          user: 'Joe Montana',
+          user: 'Nguyễn Thanh Tâm',
           url: '#1', //Link to user
           tasks: [
             {
               code: 'STDUP', //Task ID
-              desc: 'Standup Meeting', //Task name
+              desc: 'Tìm hiểu đối thủ trên thị trường', //Task name
               url: '#11', //Link to task
               begin: new Date(2020, 08, 10), //Task start date
               end: new Date(2020, 08, 16), //Task end date
@@ -32,7 +32,7 @@
             },
             {
               code: 'STDUP1',
-              desc: 'Standup Meeting 1',
+              desc: 'Tìm hiểu nhu cầu khách hàng',
               url: '#12',
               begin: new Date(2020, 08, 10),
               end: new Date(2020, 08, 24),
@@ -43,7 +43,7 @@
             },
             {
               code: 'STDUP2',
-              desc: 'Standup Meeting 2',
+              desc: 'Đo tính khả dụng',
               url: '#13',
               begin: new Date(2020, 08, 10),
               end: new Date(2020, 08, 30),
@@ -54,12 +54,12 @@
           ],
         },
         {
-          user: 'Jack Wimbledon',
+          user: 'Phan Thị Hoài',
           url: '#2',
           tasks: [
             {
               code: 'REV1',
-              desc: 'Code Review 1',
+              desc: 'Viết giới thiệu sản phẩm',
               url: '#14',
               begin: new Date(2020, 08, 25),
               end: new Date(2020, 08, 29),
@@ -69,7 +69,7 @@
             },
             {
               code: 'REV2',
-              desc: 'Code Review 2',
+              desc: 'Viết tài liệu người dùng',
               url: '#15',
               begin: new Date(2020, 08, 30),
               end: new Date(2020, 09, 02),
@@ -79,7 +79,7 @@
             },
             {
               code: 'REV3',
-              desc: 'Code Review 3',
+              desc: 'Viết module Gannt Chart',
               url: '#16',
               begin: new Date(2020, 09, 04),
               end: new Date(2020, 09, 10),
@@ -90,12 +90,28 @@
           ],
         },
         {
-          user: 'Stella Alberton',
+          user: 'Nguyễn Thanh Tùng',
           url: '#3',
           tasks: [
             {
-              code: 'STDUP',
-              desc: 'Standup Meeting',
+              code: 'STDUP3',
+              desc: 'Thiết kế module Task Flow',
+              url: '#17',
+              begin: new Date(2020, 08, 26),
+              end: new Date(2020, 09, 02),
+              progress: 100,
+              rating: 5,
+              status: '1',
+            },
+          ],
+        },
+        {
+          user: 'Nguyễn Duy Minh',
+          url: '#4',
+          tasks: [
+            {
+              code: 'STDUP4',
+              desc: 'Javascript',
               url: '#17',
               begin: new Date(2020, 08, 26),
               end: new Date(2020, 09, 02),
@@ -111,20 +127,22 @@
           beginDate: new Date(2020, 08, 06),
           endDate: new Date(2020, 09, 12),
         },
-        column: {
-          user: 'Nhan Vien',
-          task: 'Tong so du an',
-        },
+        columns: {
+          user: 'Nhân viên',
+          taskCount: 'Tổng số dự án'
+        }
       };
       var tracker_data = {
         style: {
           beginDate: new Date(2020, 08, 08),
           endDate: new Date(2020, 09, 11),
         },
-        column: {
-          user: 'Nhan Vien',
-          task: 'Tong so du an',
-        },
+        columns: {
+          task: 'Công việc',
+          begin: 'Ngày bắt đầu',
+          end: 'Ngày kết thúc',
+          status: 'Trạng thái'
+        }
       };
       $(document).ready(function () {
         report_data.data = timedata;

@@ -1,4 +1,4 @@
-(function ($) {
+(($) => {
   'use strict';
   $.fn.stackedGantt = function (options) {
     var $this = $(this);
@@ -7,20 +7,13 @@
     $this.stackedGantt = stackedGantt;
 
     stackedGantt.clearOptions();
-    stackedGantt.clearGraphicElements();
-
+    stackedGantt.clearElements();
     stackedGantt.config(options);
     stackedGantt.build();
 
-    $this.update = function () {
-      stackedGantt.update();
-    };
-    $this.destroy = function () {
-      stackedGantt.destroy();
-    };
-    $this.getData = function () {
-      return stackedGantt.data;
-    };
+    $this.update = function () { stackedGantt.update() };
+    $this.destroy = function () { stackedGantt.destroy() };
+    $this.getData = function () { return stackedGantt.data };
 
     return $this;
   };
@@ -32,35 +25,16 @@ class StackedGantt {
       date_width: 30,
       task: { color: '#7fad7f', height: 30 },
       row_height: '30px',
-      months: [
-        '01',
-        '02',
-        '03',
-        '04',
-        '05',
-        '06',
-        '07',
-        '08',
-        '09',
-        '10',
-        '11',
-        '12',
-      ],
-      no_data: 'No data!',
+      months: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+      no_data: 'No data!'
     };
 
-    const countOccurrences = (arr, val) =>
-      arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
-    const $container = $('<div>', { class: 'sg_container' });
-    const $valuesContainer = $('<div>', { class: 'sg_val_container' });
+    var countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+    var $container = $('<div>', { class: 'sg_container' });
+    var $valuesContainer = $('<div>', { class: 'sg_val_container' });
     var $headerContainer;
-    var $descriptionsContainer;
-    const $monthHeaderContainer = $('<div>', {
-      class: 'sg_month_header_container',
-    });
-    const $dateHeaderContainer = $('<div>', {
-      class: 'sg_date_header_container',
-    });
+    var $monthHeaderContainer = $('<div>', { class: 'sg_month_header_container', });
+    var $dateHeaderContainer = $('<div>', { class: 'sg_date_header_container', });
 
     var limits;
     var data;
@@ -78,15 +52,12 @@ class StackedGantt {
     var beginDate;
     var endDate;
     var rowValueContainerWidth;
+    var columns = [];
 
     //events
     var defaultOnActivityClick;
 
-    this.update = function () {
-      this.clearGraphicElements().build();
-    };
-
-    this.clearOptions = function () {
+    this.clearOptions = () => {
       limits = null;
       data = null;
       descWidth = null;
@@ -103,133 +74,131 @@ class StackedGantt {
       beginDate = null;
       endDate = null;
       rowValueContainerWidth = null;
+      columns = null;
     };
 
-    this.clearGraphicElements = function () {
-      $this.empty();
+    this.update = () => {
+      this.clearElements().build();
     };
 
-    this.config = function (options) {
-      var events = options.events;
-      data = sanitizeDataDates(options.data);
-      style = options.style;
-
-      monthHeaderFormat = style.monthHeaderFormat
-        ? style.monthHeaderFormat
-        : formatMonth;
-      noDataText = style.noDataText ? style.noDataText : defaults.no_data;
-      dateWidth = style.dateWidth ? style.dateWidth : defaults.date_width;
-      taskStyle = style.taskStyle ? style.taskStyle : {};
-      descWidth = style.descWidth
-        ? style.descWidth
-        : defaults.description_container_width;
-      defaultBeginDate = style.defaultBeginDate
-        ? style.defaultBeginDate
-        : new Date(new Date().setDate(1));
-      defaultEndDate = style.defaultEndDate
-        ? style.defaultEndDate
-        : new Date(new Date().setDate(31));
-      beginDate = style.beginDate;
-      endDate = style.endDate;
-      if (style.formatDate) formatDate = style.formatDate;
-      if (events) {
-        defaultOnActivityClick = events.onActivityClick;
-      }
-    };
-
-    this.destroy = function () {
-      this.clearGraphicElements();
+    this.destroy = () => {
+      this.clearElements();
       delete $this.update;
       delete $this.destroy;
       delete $this.stackedGantt;
     };
 
-    function sanitizeDataDates(data) {
-      data.forEach((row) => {
-        row.tasks.forEach((task) => {
-          task.begin = sanitizeDate(task.begin);
-          task.end = sanitizeDate(task.end);
-        });
-      });
-      return data;
-    }
+    this.clearElements = () => {
+      $this.empty();
+    };
 
-    function sanitizeDate(date) {
-      if (Object.prototype.toString.call(date) === '[object Date]') {
-        return date;
-      }
+    this.config = (options) => {
+      var events = options.events;
+      data = sanitizeDataDates(options.data);
+      style = options.style;
+      columns = options.columns;
 
-      if (!isNaN(date)) {
-        return new Date(date);
-      }
+      monthHeaderFormat = style.monthHeaderFormat ? style.monthHeaderFormat : formatMonth;
+      noDataText = style.noDataText ? style.noDataText : defaults.no_data;
+      dateWidth = style.dateWidth ? style.dateWidth : defaults.date_width;
+      taskStyle = style.taskStyle ? style.taskStyle : {};
+      descWidth = style.descWidth ? style.descWidth : defaults.description_container_width;
+      defaultBeginDate = style.defaultBeginDate ? style.defaultBeginDate : new Date(new Date().setDate(1));
+      defaultEndDate = style.defaultEndDate ? style.defaultEndDate : new Date(new Date().setDate(31));
+      beginDate = style.beginDate;
+      endDate = style.endDate;
+      if (style.formatDate) formatDate = style.formatDate;
+      if (events) defaultOnActivityClick = events.onActivityClick;
+    };
 
-      throw new Error('Invalid Date: ' + date);
-    }
-
-    this.build = function () {
+    this.build = () => {
       if (!data || !data.length) {
         $this.append($('<div>', { class: 'sg_no_data', html: noDataText }));
       } else {
-        createContainers();
+        createContainers(data);
         defineLimits();
         createHeader();
         createRows();
         listenToWindowResize();
       }
     };
-
-    function createContainers() {
+    var createContainers = () => {
       let $wrapContainer = $('<div>', { class: 'sg_container_wrapper' });
       $wrapContainer.append($container);
       $this.append($wrapContainer);
 
-      $headerContainer = $('<div>', {
-        class: 'sg_header_container',
-        css: { marginLeft: descWidth + 1 + 'px' },
-      });
+      $headerContainer = $('<div>', { class: 'sg_header_container' });
 
-      $descriptionsContainer = _createColumn(1, "Nhân Viên");
-
-      $container.append(
-        $descriptionsContainer,
-        $headerContainer,
-        $valuesContainer
-      );
+      $container.append(_createColumns, $headerContainer, $valuesContainer);
       addHorizontalScroll($valuesContainer);
       addValuesContainerScrollWatch();
     }
 
-    function _createColumn(id, name) {
-      let $column = $('<div>', {
-        id: 'sg_col-' + id,
-        class: 'sg_desc_container',
-        css: { width: descWidth + 'px' },
+    var _createColumns = () => {
+      let cols = [];
+      let fields = {
+        user: data.map(data => data.user),
+        taskCount: data.map(data => data.tasks.length),
+        task: data.map(data => data.tasks.map(task => task.desc)).flat(),
+        begin: data.map(data => data.tasks.map(task => task.begin)).flat(),
+        end: data.map(data => data.tasks.map(task => task.end)).flat(),
+        status: data.map(data => data.tasks.map(task => task.status)).flat(),
+      }
+
+      let colKeys = Object.keys(columns);
+
+      colKeys.forEach(key => {
+        cols.push(_createColumn(key, columns[key], fields[key]));
       });
 
-      let $columnHeader = $('<div>', {
+      return cols;
+    }
+
+    var _createColumn = (id, headerText, data) => {
+      let $col = $('<div>', {
+        id: id,
+        class: 'sg_desc_container'
+      });
+
+      let $colHeader = $('<div>', {
         class: 'sg_desc_container_header',
         css: {
           height: '60px',
-          lineHeight: '60px',
-          width: descWidth,
+          lineHeight: '60px'
         },
-        html: name,
+        html: headerText,
       });
-      $column.append($columnHeader);
-      $column.scroll(function () {
-        $valuesContainer.scrollTop($column.scrollTop());
+      $col.append($colHeader);
+      data.forEach((row, index) => {
+        var even = index % 2 === 0;
+        if (Object.prototype.toString.call(row) === '[object Date]') {
+          row = formatDate(row) + '/' + formatMonth(row);
+        }
+        $col.append(_createColData(row, $col, even));
       });
-      return $column;
+      $col.scroll(() => { $valuesContainer.scrollTop($col.scrollTop()); });
+      return $col;
     }
 
-    function addValuesContainerScrollWatch() {
-      $valuesContainer.scroll(function () {
-        $headerContainer.scrollLeft($valuesContainer.scrollLeft());
+
+    var _createColData = (data, $column, even) => {
+      var height = getRowHeight();
+      var css = {
+        height: height,
+        lineHeight: height,
+      };
+      var evenOdd = even ? 'even' : 'odd';
+      var $rowData = $('<div>', {
+        class: 'sg_row_desc_container ' + evenOdd,
+        css: css,
       });
+      $rowData.html(data);
+      $column.append($rowData);
     }
 
-    function defineLimits() {
-      var rowsLimits = data.map(function (row) {
+
+    var defineLimits = () => {
+      var rowsLimits = data.map((row) => {
         return {
           begin: getRowBegin(row),
           end: getRowEnd(row),
@@ -238,18 +207,14 @@ class StackedGantt {
 
       var begin;
       var begins = rowsLimits
-        .map(function (rowLimit) {
-          return rowLimit.begin;
-        })
-        .filter(function (begin) {
-          return begin;
-        });
+        .map((rowLimit) => { return rowLimit.begin; })
+        .filter((begin) => { return begin; });
 
       if (beginDate) begins.push(beginDate);
 
       if (begins.length) {
         begin = new Date(
-          begins.reduce(function (lowestBegin, currentBegin) {
+          begins.reduce((lowestBegin, currentBegin) => {
             return currentBegin < lowestBegin ? currentBegin : lowestBegin;
           })
         );
@@ -260,19 +225,13 @@ class StackedGantt {
       if (!beginDate) begin.setDate(begin.getDate() - 1);
 
       var end;
-      var ends = rowsLimits
-        .map(function (rowLimit) {
-          return rowLimit.end;
-        })
-        .filter(function (end) {
-          return end;
-        });
+      var ends = rowsLimits.map((rowLimit) => { return rowLimit.end }).filter((end) => { return end });
 
       if (endDate) ends.push(endDate);
 
       if (ends.length) {
         end = new Date(
-          ends.reduce(function (highestEnd, currentEnd) {
+          ends.reduce((highestEnd, currentEnd) => {
             return currentEnd > highestEnd ? currentEnd : highestEnd;
           })
         );
@@ -288,49 +247,34 @@ class StackedGantt {
       };
     }
 
-    function getRowBegin(row) {
+    var getRowBegin = (row) => {
       var begins = [];
-
       if (row.tasks) {
-        begins = begins.concat(
-          row.tasks.map(function (task) {
-            return task.begin;
-          })
-        );
+        begins = begins.concat(row.tasks.map((task) => {
+          return task.begin;
+        }));
       }
-
       if (!begins.length) return;
-
-      var lowestBegin = begins.reduce(function (lowestBegin, currentBegin) {
+      var lowestBegin = begins.reduce((lowestBegin, currentBegin) => {
         return currentBegin < lowestBegin ? currentBegin : lowestBegin;
       });
-
       return lowestBegin;
     }
 
-    function getRowEnd(row) {
+    var getRowEnd = (row) => {
       var ends = [];
-
       if (row.tasks) {
-        ends = ends.concat(
-          row.tasks.map(function (task) {
-            return task.end;
-          })
-        );
+        ends = ends.concat(row.tasks.map((task) => { return task.end }));
       }
-
       if (endDate) ends.push(endDate);
-
       if (!ends.length) return;
-
-      var highestEnd = ends.reduce(function (highestEnd, currentEnd) {
+      var highestEnd = ends.reduce((highestEnd, currentEnd) => {
         return currentEnd > highestEnd ? currentEnd : highestEnd;
       });
-
       return highestEnd;
     }
 
-    function createHeader() {
+    var createHeader = () => {
       monthHeaders = [];
       $headerContainer.append($monthHeaderContainer, $dateHeaderContainer);
       days = getDateRange();
@@ -349,18 +293,16 @@ class StackedGantt {
       });
     }
 
-    function createMonthHeader(date, days, scrollLeft) {
+    var createMonthHeader = (date, days, scrollLeft) => {
       var width = days ? dateWidth * days : scrollLeft;
-      var css = {
-        width: width + 'px',
-      };
+      var css = { width: width + 'px' };
       var $headerItem = $('<div>', { class: 'sg_month_header_item', css: css });
       $monthHeaderContainer.append($headerItem);
       $headerItem.html(monthHeaderFormat(date));
       return $headerItem;
     }
 
-    function createDateHeader(date) {
+    var createDateHeader = (date) => {
       var $headerItem = $('<div>', {
         class: 'sg_date_header_item',
         css: { width: dateWidth + 'px' },
@@ -370,61 +312,31 @@ class StackedGantt {
       $headerItem.attr('title', formatDate(date) + '/' + formatMonth(date));
     }
 
-    function getDateRange() {
+    var getDateRange = () => {
       let dates = [];
-
-      for (
-        var date = new Date(limits.begin);
-        date <= limits.end;
-        date.setDate(date.getDate() + 1)
-      ) {
+      for (var date = new Date(limits.begin); date <= limits.end; date.setDate(date.getDate() + 1)) {
         dates.push(new Date(date));
       }
       return dates;
     }
-    function getMonthRange() {
+    var getMonthRange = () => {
       let months = [];
       let month = new Date(limits.begin);
       let lastMonth = limits.end.getMonth();
-      for (
-        month;
-        month.getMonth() <= lastMonth;
-        month.setMonth(month.getMonth() + 1)
-      ) {
+      for (month; month.getMonth() <= lastMonth; month.setMonth(month.getMonth() + 1)) {
         months.push(new Date(month));
       }
       return months;
     }
 
-    function createRows() {
+    var createRows = () => {
       rowValueContainerWidth = Math.max(dates * dateWidth);
-
       data.forEach((row, rowIndex) => {
         var even = rowIndex % 2 === 0;
-        createRowDescription(row, even);
         createRowTimeline(row, even);
       });
     }
-
-    function createRowDescription(row, even) {
-      var height = getRowHeight();
-
-      var css = {
-        height: height,
-        lineHeight: height,
-      };
-
-      var evenOdd = even ? 'even' : 'odd';
-
-      var $rowDescriptionContainer = $('<div>', {
-        class: 'sg_row_desc_container ' + evenOdd,
-        css: css,
-      });
-      $rowDescriptionContainer.html(row.user);
-      $descriptionsContainer.append($rowDescriptionContainer);
-    }
-
-    function createRowTimeline(row, even) {
+    var createRowTimeline = (row, even) => {
       var height = getRowHeight();
 
       var css = {
@@ -432,9 +344,7 @@ class StackedGantt {
         lineHeight: height,
         width: rowValueContainerWidth,
       };
-
       var evenOdd = even ? 'even' : 'odd';
-
       var $rowValueContainer = $('<div>', {
         class: 'sg_row_val_container ' + evenOdd,
         css: css,
@@ -446,7 +356,7 @@ class StackedGantt {
       });
     }
 
-    function createActivity(task, $rowValueContainer, row) {
+    var createActivity = (task, $rowValueContainer, row) => {
       let css = {
         width: calculateDatesDifferenceInPx(task.begin, task.end),
         left: calculateDatesDifferenceInPx(task.begin, limits.begin),
@@ -458,16 +368,14 @@ class StackedGantt {
       $rowValueContainer.append($task);
 
       if (getTaskClick(task)) {
-        $task.click(function () {
-          taskClick(task, row, data);
-        });
+        $task.click(() => { taskClick(task, row, data); });
         $task.css('cursor', 'pointer');
       }
 
       createActivityTooltip(task, $task, row);
     }
 
-    function createActivityTooltip(task, $task, row) {
+    var createActivityTooltip = (task, $task, row) => {
       let info = {
         color: getTaskColor(task),
         url: row.url
@@ -476,17 +384,14 @@ class StackedGantt {
       createTooltip(task, $task, info);
     }
 
-    function calculateDatesDifferenceInPx(date1, date2) {
-      var timezoneOffsetDiff =
-        Math.abs(date1.getTimezoneOffset() - date2.getTimezoneOffset()) *
-        60 *
-        1000;
+    var calculateDatesDifferenceInPx = (date1, date2) => {
+      var timezoneOffsetDiff = Math.abs(date1.getTimezoneOffset() - date2.getTimezoneOffset()) * 60 * 1000;
       var diff = (Math.abs(date1 - date2) - timezoneOffsetDiff) / 3600000;
       var width = (diff * dateWidth) / 24;
       return width + 'px';
     }
 
-    function getRowHeight() {
+    var getRowHeight = () => {
       if (style && style.rowHeight) {
         return style.rowHeight;
       } else {
@@ -494,7 +399,7 @@ class StackedGantt {
       }
     }
 
-    function getTaskColor(task) {
+    var getTaskColor = (task) => {
       if (task.color) return task.color;
 
       var style = taskStyle[task.code];
@@ -506,25 +411,22 @@ class StackedGantt {
       return defaults.task.color;
     }
 
-    function getTaskHeight(task) {
+    var getTaskHeight = (task) => {
       if (task.height) return task.height;
-
       var style = taskStyle[task.code];
-
       if (style && style.height) {
         return style.height;
       }
-
       return defaults.task.height;
     }
 
-    function getTaskClick(task) {
+    var getTaskClick = (task) => {
       if (task.onClick !== undefined) return task.onClick;
       return defaultOnActivityClick;
     }
 
-    function createTooltip(task, $task, info) {
-      var handleMouseOver = ev => {
+    var createTooltip = (task, $task, info) => {
+      var handleMouseOver = (ev) => {
         $task.addClass('hover');
 
         var $tooltip = $('<div>', { class: 'sg_tooltip' });
@@ -548,7 +450,7 @@ class StackedGantt {
       $task.mouseover(handleMouseOver);
     }
 
-    function getTooltipPosition(ev, $tooltip) {
+    var getTooltipPosition = (ev, $tooltip) => {
       var $w = $(window);
       var left = ev.pageX + 5;
       var top = ev.pageY + 5;
@@ -572,9 +474,7 @@ class StackedGantt {
       };
     }
 
-    function appendTooltipContent(task, $tooltip, info) {
-      console.log(task, info);
-
+    var appendTooltipContent = (task, $tooltip) => {
       $tooltip.append($('<span>', { class: 'sg_tooltip_title', html: 'Hiệu suất:' }));
       $tooltip.append($('<span>', { class: 'sg_tooltip_value', html: task.progress }));
       $tooltip.append($('<span>', { class: 'sg_tooltip_title', html: 'Đánh giá:' }));
@@ -592,49 +492,44 @@ class StackedGantt {
 
     }
 
-    function initTooltipRemoval($element, $tooltip, handleMouseOver) {
-      return function () {
+    var initTooltipRemoval = ($element, $tooltip, handleMouseOver) => {
+      return () => {
         $tooltip.shallRemove = true;
-        setTimeout(function () {
+        setTimeout(() => {
           if ($tooltip.shallRemove) {
             $tooltip.remove();
-            $element
-              .unbind('mouseover mouseout')
-              .removeClass('hover')
-              .mouseover(handleMouseOver);
+            $element.unbind('mouseover mouseout').removeClass('hover').mouseover(handleMouseOver);
           }
         }, 50);
       };
     }
-    function keepTooltip($tooltip) {
-      return function () {
-        $tooltip.shallRemove = false;
-      };
+    var keepTooltip = ($tooltip) => {
+      return () => { $tooltip.shallRemove = false; };
     }
-    function listenToWindowResize() {
+    var listenToWindowResize = () => {
       defineContainerDisplayType();
       $(window).on('resize', defineContainerDisplayType);
     }
-    function defineContainerDisplayType() {
+    var defineContainerDisplayType = () => {
       setContainersDisplay('inline-block', 'inline-block');
 
       if ($container.outerWidth() >= $this.width()) {
         setContainersDisplay('block', 'grid');
       }
     }
-    function setContainersDisplay(container, valuesContainer) {
+    var setContainersDisplay = (container, valuesContainer) => {
       $container.css('display', '');
       $valuesContainer.css('display', '');
       $container.css('display', container);
       $valuesContainer.css('display', valuesContainer);
     }
-    var formatDate = function (date) {
+    var formatDate = (date) => {
       return ('0' + date.getDate()).slice(-2);
     };
-    var formatMonth = function (date) {
+    var formatMonth = (date) => {
       return defaults.months[date.getMonth()] + '/' + date.getFullYear();
     };
-    function getDimensions($element) {
+    var getDimensions = ($element) => {
       var $clone = $element.clone().show().css('visibility', 'hidden');
       getBody().append($clone);
       var result = {
@@ -645,39 +540,49 @@ class StackedGantt {
       $clone.remove();
       return result;
     }
-    function getBody() {
+
+    var sanitizeDataDates = (data) => {
+      data.forEach((row) => {
+        row.tasks.forEach((task) => {
+          task.begin = sanitizeDate(task.begin);
+          task.end = sanitizeDate(task.end);
+        });
+      });
+      return data;
+    }
+
+    var sanitizeDate = (date) => {
+      if (Object.prototype.toString.call(date) === '[object Date]') {
+        return date;
+      }
+      if (!isNaN(date)) {
+        return new Date(date);
+      }
+      throw new Error('Invalid Date: ' + date);
+    }
+
+
+    var getBody = () => {
       var body = $container.parentsUntil('body').last().parent();
       return $(body);
     }
-    function defineFontColor(backgroundColor) {
-      if (backgroundColor[0] === '#')
-        backgroundColor = hexToRgb(backgroundColor);
-      var luma =
-        0.2126 * backgroundColor.r +
-        0.7152 * backgroundColor.g +
-        0.0722 * backgroundColor.b;
+    var defineFontColor = (backgroundColor) => {
+      if (backgroundColor[0] === '#') backgroundColor = hexToRgb(backgroundColor);
+      var luma = 0.2126 * backgroundColor.r + 0.7152 * backgroundColor.g + 0.0722 * backgroundColor.b;
       return luma < 170 ? '#fff' : '#585050';
     }
-    function hexToRgb(hex) {
+    var hexToRgb = (hex) => {
       var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-      hex = hex.replace(shorthandRegex, function (m, r, g, b) {
-        return r + r + g + g + b + b;
-      });
-
+      hex = hex.replace(shorthandRegex, (m, r, g, b) => { return r + r + g + g + b + b; });
       var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return result
-        ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16),
-        }
-        : null;
+      return result ? { r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16), } : null;
     }
-    function getCssRgb(rgb, alpha) {
+    var getCssRgb = (rgb, alpha) => {
       return 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + alpha + ')';
     }
-    function addHorizontalScroll($element) {
-      var scrollHorizontally = function (e) {
+
+    var addHorizontalScroll = ($element) => {
+      var scrollHorizontally = (e) => {
         e = window.event || e;
         if (!e.wheelDelta && !e.detail) e = e.originalEvent;
         var delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
@@ -685,6 +590,10 @@ class StackedGantt {
         e.preventDefault();
       };
       $element.bind('mousewheel DOMMouseScroll', scrollHorizontally);
+    }
+
+    var addValuesContainerScrollWatch = () => {
+      $valuesContainer.scroll(() => { $headerContainer.scrollLeft($valuesContainer.scrollLeft()) });
     }
   }
 }
