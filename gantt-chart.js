@@ -476,7 +476,7 @@ class StackedGantt {
     var appendTooltipContent = (task, $tooltip) => {
 
       $tooltip.append($('<span>', { class: 'sg_tooltip_title', html: 'Hiệu suất:' }));
-      $tooltip.append($('<span>', { class: 'sg_tooltip_value', html: task.progress + '%' }));
+      $tooltip.append($('<span>', { class: 'sg_tooltip_value', html: task.progress }));
       $tooltip.append($('<span>', { class: 'sg_tooltip_title', html: 'Đánh giá:' }));
       $tooltip.append($('<span>', { class: 'sg_tooltip_value', html: task.rating }));
       $tooltip.append($('<span>', { class: 'sg_tooltip_title', html: 'Công việc:' }));
