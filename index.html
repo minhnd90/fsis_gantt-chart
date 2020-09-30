@@ -21,36 +21,32 @@
           tasks: [
             {
               code: 'STDUP', //Task ID
-              desc: 'Tìm hiểu đối thủ trên thị trường', //Task name
-              url: '#11', //Link to task
-              begin: new Date(2020, 08, 10), //Task start date
-              end: new Date(2020, 08, 16), //Task end date
+              begin: new Date(2020, 08, 05), //Task start date
+              end: new Date(2020, 08, 10), //Task end date
               progress: 90, //90%
               rating: 4.5, //0-5 step 0.5
-              status: 'Chưa xử lý', // Task status
+              status: {
+                'Chưa xử lý': '3',
+                'Đang xử lý': '2',
+                'Hoàn thành': '2',
+                'Tạm dừng': '1',
+              }, // Task status
               color: '#abc', // Optional: Task color
             },
             {
               code: 'STDUP1',
-              desc: 'Tìm hiểu nhu cầu khách hàng',
-              url: '#12',
-              begin: new Date(2020, 08, 10),
-              end: new Date(2020, 08, 24),
+              begin: new Date(2020, 08, 12),
+              end: new Date(2020, 08, 17),
               progress: 80,
               rating: 4.5,
-              status: 'Đang xử lý',
+              status: {
+                'Chưa xử lý': '3',
+                'Đang xử lý': '2',
+                'Hoàn thành': '2',
+                'Tạm dừng': '1',
+              },
               color: '#def',
-            },
-            {
-              code: 'STDUP2',
-              desc: 'Đo tính khả dụng',
-              url: '#13',
-              begin: new Date(2020, 08, 10),
-              end: new Date(2020, 08, 30),
-              progress: 60,
-              status: 'Hoàn thành',
-              rating: 4.5,
-            },
+            }
           ],
         },
         {
@@ -59,34 +55,17 @@
           tasks: [
             {
               code: 'REV1',
-              desc: 'Viết giới thiệu sản phẩm',
-              url: '#14',
-              begin: new Date(2020, 08, 25),
-              end: new Date(2020, 08, 29),
+              begin: new Date(2020, 08, 08),
+              end: new Date(2020, 08, 15),
               progress: 100,
               rating: 5,
-              status: '4',
-            },
-            {
-              code: 'REV2',
-              desc: 'Viết tài liệu người dùng',
-              url: '#15',
-              begin: new Date(2020, 08, 30),
-              end: new Date(2020, 09, 02),
-              progress: 50,
-              rating: 4.5,
-              status: '1',
-            },
-            {
-              code: 'REV3',
-              desc: 'Viết module Gannt Chart',
-              url: '#16',
-              begin: new Date(2020, 09, 04),
-              end: new Date(2020, 09, 10),
-              progress: 25,
-              rating: 3.5,
-              status: '3',
-            },
+              status: {
+                'Chưa xử lý': '1',
+                'Đang xử lý': '2',
+                'Hoàn thành': '3',
+                'Tạm dừng': '4',
+              },
+            }
           ],
         },
         {
@@ -95,13 +74,16 @@
           tasks: [
             {
               code: 'STDUP3',
-              desc: 'Thiết kế module Task Flow',
-              url: '#17',
-              begin: new Date(2020, 08, 26),
-              end: new Date(2020, 09, 02),
+              begin: new Date(2020, 08, 25),
+              end: new Date(2020, 09, 01),
               progress: 100,
               rating: 5,
-              status: '1',
+              status: {
+                'Chưa xử lý': '3',
+                'Đang xử lý': '2',
+                'Hoàn thành': '2',
+                'Tạm dừng': '1',
+              },
             },
           ],
         },
@@ -111,13 +93,16 @@
           tasks: [
             {
               code: 'STDUP4',
-              desc: 'Javascript',
-              url: '#17',
-              begin: new Date(2020, 08, 26),
-              end: new Date(2020, 09, 02),
+              begin: new Date(2020, 08, 10),
+              end: new Date(2020, 09, 03),
               progress: 100,
               rating: 5,
-              status: '1',
+              status: {
+                'Chưa xử lý': '4',
+                'Đang xử lý': '2',
+                'Hoàn thành': '0',
+                'Tạm dừng': '1',
+              },
             },
           ],
         },
@@ -148,7 +133,7 @@
         report_data.data = timedata;
         tracker_data.data = timedata;
         $('#job-report').stackedGantt(report_data);
-        //$('#job-tracker').stackedGantt(tracker_data);
+        // $('#job-tracker').stackedGantt(tracker_data);
       });
     </script>
   </body>

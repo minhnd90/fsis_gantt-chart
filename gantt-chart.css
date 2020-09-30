@@ -112,15 +112,22 @@
   box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.3);
   background: #f0f0f0;
   display: grid;
-  grid-template-columns: auto auto
+  grid-template-columns: auto auto;
 }
 .sg_tooltip_title {
   font-weight: bold;
+}
+.sg_tooltip_title:last-child {
+  grid-column: 1 / 3;
 }
 .sg_tooltip_subtitle {
   grid-column-start: 1;
   grid-column-end: 3;
   text-align: right;
+}
+.sg_tooltip_status {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 .sg_tooltip_description_wrapper {
   text-align: center;
