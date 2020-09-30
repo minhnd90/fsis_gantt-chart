@@ -141,8 +141,7 @@ class StackedGantt {
         taskCount: data.map(data => data.tasks.length),
         task: data.map(data => data.tasks.map(task => task.desc)).flat(),
         begin: data.map(data => data.tasks.map(task => task.begin)).flat(),
-        end: data.map(data => data.tasks.map(task => task.end)).flat(),
-        status: data.map(data => data.tasks.map(task => task.status)).flat(),
+        end: data.map(data => data.tasks.map(task => task.end)).flat()
       }
 
       let colKeys = Object.keys(columns);
@@ -451,18 +450,18 @@ class StackedGantt {
     }
 
     var getTooltipPosition = (ev, $tooltip) => {
-      var $w = $(window);
-      var left = ev.pageX + 5;
-      var top = ev.pageY + 5;
+      let $w = $(window);
+      let left = ev.pageX + 5;
+      let top = ev.pageY + 5;
 
-      var tooltipRight = left + getDimensions($tooltip).width;
-      var windowRightVisible = $w.scrollLeft() + $w.width();
+      let tooltipRight = left + getDimensions($tooltip).width;
+      let windowRightVisible = $w.scrollLeft() + $w.width();
 
       if (tooltipRight >= windowRightVisible - 50) {
         left -= tooltipRight - windowRightVisible + 50;
       }
-      var tooltipBottom = top + getDimensions($tooltip).height;
-      var windowBottomVisible = $w.scrollTop() + $w.height();
+      let tooltipBottom = top + getDimensions($tooltip).height;
+      let windowBottomVisible = $w.scrollTop() + $w.height();
 
       if (tooltipBottom >= windowBottomVisible - 75) {
         top -= tooltipBottom - windowBottomVisible + 75;
@@ -475,12 +474,20 @@ class StackedGantt {
     }
 
     var appendTooltipContent = (task, $tooltip) => {
+
       $tooltip.append($('<span>', { class: 'sg_tooltip_title', html: 'Hiệu suất:' }));
       $tooltip.append($('<span>', { class: 'sg_tooltip_value', html: task.progress }));
       $tooltip.append($('<span>', { class: 'sg_tooltip_title', html: 'Đánh giá:' }));
       $tooltip.append($('<span>', { class: 'sg_tooltip_value', html: task.rating }));
       $tooltip.append($('<span>', { class: 'sg_tooltip_title', html: 'Công việc:' }));
-      $tooltip.append($('<span>', { class: 'sg_tooltip_value', html: task.status }));
+
+      let statusContainer = $('<span>', { class: 'sg_tooltip_status' });
+      let keys = Object.keys(task.status);
+      keys.forEach((key) => {
+        statusContainer.append($('<span>', { class: 'sg_tooltip_stat', html: key + ': ' + task.status[key] }));
+      });
+
+      $tooltip.append(statusContainer);
 
       if (task.url) {
         $tooltip.append($('<a>', {
