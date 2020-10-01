@@ -1,141 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gantt Chart Demo</title>
+		<link rel="stylesheet" href="gantt-chart.css" />
+	</head>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gantt Chart Demo</title>
-    <link rel="stylesheet" href="gantt-chart.css" />
-  </head>
-
-  <body>
-    <div id="job-report"></div>
-    <div id="job-tracker"></div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="gantt-chart.js"></script>
-    <script>
-      var timedata = [
-        {
-          user: 'Nguyễn Thanh Tâm',
-          url: '#1', //Link to user
-          tasks: [
-            {
-              code: 'STDUP', //Task ID
-              begin: new Date(2020, 08, 05), //Task start date
-              end: new Date(2020, 08, 10), //Task end date
-              progress: 90, //90%
-              rating: 4.5, //0-5 step 0.5
-              status: {
-                'Chưa xử lý': '3',
-                'Đang xử lý': '2',
-                'Hoàn thành': '2',
-                'Tạm dừng': '1',
-              }, // Task status
-              color: '#abc', // Optional: Task color
-            },
-            {
-              code: 'STDUP1',
-              begin: new Date(2020, 08, 12),
-              end: new Date(2020, 08, 17),
-              progress: 80,
-              rating: 4.5,
-              status: {
-                'Chưa xử lý': '3',
-                'Đang xử lý': '2',
-                'Hoàn thành': '2',
-                'Tạm dừng': '1',
-              },
-              color: '#def',
-            }
-          ],
-        },
-        {
-          user: 'Phan Thị Hoài',
-          url: '#2',
-          tasks: [
-            {
-              code: 'REV1',
-              begin: new Date(2020, 08, 08),
-              end: new Date(2020, 08, 15),
-              progress: 100,
-              rating: 5,
-              status: {
-                'Chưa xử lý': '1',
-                'Đang xử lý': '2',
-                'Hoàn thành': '3',
-                'Tạm dừng': '4',
-              },
-            }
-          ],
-        },
-        {
-          user: 'Nguyễn Thanh Tùng',
-          url: '#3',
-          tasks: [
-            {
-              code: 'STDUP3',
-              begin: new Date(2020, 08, 25),
-              end: new Date(2020, 09, 01),
-              progress: 100,
-              rating: 5,
-              status: {
-                'Chưa xử lý': '3',
-                'Đang xử lý': '2',
-                'Hoàn thành': '2',
-                'Tạm dừng': '1',
-              },
-            },
-          ],
-        },
-        {
-          user: 'Nguyễn Duy Minh',
-          url: '#4',
-          tasks: [
-            {
-              code: 'STDUP4',
-              begin: new Date(2020, 08, 10),
-              end: new Date(2020, 09, 03),
-              progress: 100,
-              rating: 5,
-              status: {
-                'Chưa xử lý': '4',
-                'Đang xử lý': '2',
-                'Hoàn thành': '0',
-                'Tạm dừng': '1',
-              },
-            },
-          ],
-        },
-      ];
-      var report_data = {
-        style: {
-          beginDate: new Date(2020, 08, 06),
-          endDate: new Date(2020, 09, 12),
-        },
-        columns: {
-          user: 'Nhân viên',
-          taskCount: 'Tổng số dự án'
-        }
-      };
-      var tracker_data = {
-        style: {
-          beginDate: new Date(2020, 08, 08),
-          endDate: new Date(2020, 09, 11),
-        },
-        columns: {
-          task: 'Công việc',
-          begin: 'Ngày bắt đầu',
-          end: 'Ngày kết thúc',
-          status: 'Trạng thái'
-        }
-      };
-      $(document).ready(function () {
-        report_data.data = timedata;
-        tracker_data.data = timedata;
-        $('#job-report').stackedGantt(report_data);
-        // $('#job-tracker').stackedGantt(tracker_data);
-      });
-    </script>
-  </body>
-
+	<body>
+		<div id="job-report"></div>
+		<div id="job-tracker"></div>
+		<script src="jquery-3.5.1.slim.min.js"></script>
+		<script src="gantt-chart.js"></script>
+		<script src="gantt.js"></script>
+		<script>
+			var timedata = [
+				{
+					user: 'Nguyễn Thanh Tâm',
+					url: '#1', //Link to user
+					tasks: [
+						{
+							code: 'STDUP', //Task ID
+							begin: new Date(2020, 08, 05), //Task start date
+							end: new Date(2020, 08, 10), //Task end date
+							progress: 90, //90%
+							rating: 4.5, //0-5 step 0.5
+							status: {
+								'Chưa xử lý': '3',
+								'Đang xử lý': '2',
+								'Hoàn thành': '2',
+								'Tạm dừng': '1',
+							}, // Task status
+							color: '#abc', // Optional: Task color
+						},
+						{
+							code: 'STDUP1',
+							begin: new Date(2020, 08, 12),
+							end: new Date(2020, 08, 17),
+							progress: 80,
+							rating: 4.5,
+							status: {
+								'Chưa xử lý': '3',
+								'Đang xử lý': '2',
+								'Hoàn thành': '2',
+								'Tạm dừng': '1',
+							},
+							color: '#def',
+						},
+					],
+				},
+				{
+					user: 'Phan Thị Hoài',
+					url: '#2',
+					tasks: [
+						{
+							code: 'REV1',
+							begin: new Date(2020, 08, 08),
+							end: new Date(2020, 08, 15),
+							progress: 100,
+							rating: 5,
+							status: {
+								'Chưa xử lý': '1',
+								'Đang xử lý': '2',
+								'Hoàn thành': '3',
+								'Tạm dừng': '4',
+							},
+						},
+					],
+				},
+				{
+					user: 'Nguyễn Thanh Tùng',
+					url: '#3',
+					tasks: [
+						{
+							code: 'STDUP3',
+							begin: new Date(2020, 08, 25),
+							end: new Date(2020, 09, 01),
+							progress: 100,
+							rating: 5,
+							status: {
+								'Chưa xử lý': '3',
+								'Đang xử lý': '2',
+								'Hoàn thành': '2',
+								'Tạm dừng': '1',
+							},
+						},
+					],
+				},
+				{
+					user: 'Nguyễn Duy Minh',
+					url: '#4',
+					tasks: [
+						{
+							code: 'STDUP4',
+							begin: new Date(2020, 08, 10),
+							end: new Date(2020, 09, 03),
+							progress: 100,
+							rating: 5,
+							status: {
+								'Chưa xử lý': '4',
+								'Đang xử lý': '2',
+								'Hoàn thành': '0',
+								'Tạm dừng': '1',
+							},
+						},
+					],
+				},
+			];
+			var report_data = {
+				style: {
+					beginDate: new Date(2020, 08, 06),
+					endDate: new Date(2020, 09, 12),
+				},
+				columns: {
+					user: 'Nhân viên',
+					taskCount: 'Tổng số dự án',
+				},
+			};
+			var tracker_data = {
+				style: {
+					beginDate: new Date(2020, 08, 08),
+					endDate: new Date(2020, 09, 11),
+				},
+				columns: {
+					task: 'Công việc',
+					begin: 'Ngày bắt đầu',
+					end: 'Ngày kết thúc',
+					status: 'Trạng thái',
+				},
+			};
+			$(document).ready(function () {
+				report_data.data = timedata;
+				tracker_data.data = timedata;
+				$('#job-report').stackedGantt(report_data);
+				$('#job-report1').gantt(report_data);
+			});
+		</script>
+	</body>
 </html>
