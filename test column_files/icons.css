@@ -1,0 +1,1228 @@
+﻿.flags {
+    background: url('/Assets/app/img/flags.png') no-repeat center center;
+    cursor: pointer;
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    top: 10px;
+    display: inline-block;
+}
+.flag-lo {
+    background-position: 0 -79px;
+    position: relative;
+}
+.flag-en {
+    background-position: 0 -42px;
+    position: relative;
+}
+
+.flag-vi {
+    background-position: 0 -5px;
+    position: relative;
+}
+
+
+.exts {
+    background: url('/Assets/app/img/exts.png') no-repeat center center;
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+}
+
+.exts-24 {
+    background: url('/Assets/app/img/exts-24.png') no-repeat center center;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+
+*[class*="exts-svg"] {
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    vertical-align: middle;
+    position: relative;
+    background-image: url('/Assets/app/img/exts-svg/icon_file_default.svg');
+}
+*[class*="exts-svg-24"] {
+    height: 24px;
+    width: 24px;
+}
+.ext-mp3,
+.ext-aa,
+.ext-aac,
+.ext-aax,
+.ext-ac3,
+.ext-adt,
+.ext-adts,
+.ext-aif,
+.ext-aifc,
+.ext-aiff,
+.ext-au,
+.ext-caf,
+.ext-cdda,
+.ext-gsm,
+.ext-m3u,
+.ext-m3u8,
+.ext-mid,
+.ext-midi,
+.ext-pls,
+.ext-ra,
+.ext-ram,
+.ext-rmi,
+.ext-sd2,
+.ext-smd,
+.ext-smx,
+.ext-smz,
+.ext-snd,
+.ext-wav,
+.ext-wave,
+.ext-wax {
+    background-position: 0 -935px;
+    position: relative;
+}
+.ext-mp4,
+.ext-m4a,
+.ext-m4b,
+.ext-m4p,
+.ext-m4r,
+.ext-wma{
+    background-position: 0 -1079px;
+    position: relative;
+}
+
+.ext-svg-mp3,
+.ext-svg-aa,
+.ext-svg-aac,
+.ext-svg-aax,
+.ext-svg-ac3,
+.ext-svg-adt,
+.ext-svg-adts,
+.ext-svg-aif,
+.ext-svg-aifc,
+.ext-svg-aiff,
+.ext-svg-au,
+.ext-svg-caf,
+.ext-svg-cdda,
+.ext-svg-gsm,
+.ext-svg-m3u,
+.ext-svg-m3u8,
+.ext-svg-mid,
+.ext-svg-midi,
+.ext-svg-pls,
+.ext-svg-ra,
+.ext-svg-ram,
+.ext-svg-rmi,
+.ext-svg-sd2,
+.ext-svg-smd,
+.ext-svg-smx,
+.ext-svg-smz,
+.ext-svg-snd,
+.ext-svg-wav,
+.ext-svg-wave,
+.ext-svg-wax {
+    background-image: url('/Assets/app/img/exts-svg/icon-music.svg');
+}
+.ext-svg-mp4,
+.ext-svg-m4a,
+.ext-svg-m4b,
+.ext-svg-m4p,
+.ext-svg-m4r,
+.ext-svg-wma{
+    background-image: url('/Assets/app/img/exts-svg/icon_file_video.svg');
+}
+
+.exts-24.ext-mp3,
+.exts-24.ext-aa,
+.exts-24.ext-aac,
+.exts-24.ext-aax,
+.exts-24.ext-ac3,
+.exts-24.ext-adt,
+.exts-24.ext-adts,
+.exts-24.ext-aif,
+.exts-24.ext-aifc,
+.exts-24.ext-aiff,
+.exts-24.ext-au,
+.exts-24.ext-caf,
+.exts-24.ext-cdda,
+.exts-24.ext-gsm,
+.exts-24.ext-m3u,
+.exts-24.ext-m3u8,
+.exts-24.ext-mid,
+.exts-24.ext-midi,
+.exts-24.ext-pls,
+.exts-24.ext-ra,
+.exts-24.ext-ram,
+.exts-24.ext-rmi,
+.exts-24.ext-sd2,
+.exts-24.ext-smd,
+.exts-24.ext-smx,
+.exts-24.ext-smz,
+.exts-24.ext-snd,
+.exts-24.ext-wav,
+.exts-24.ext-wave,
+.exts-24.ext-wax {
+    background-position: 0 -701px;
+    position: relative;
+}
+.exts-24.ext-mp4,
+.exts-24.ext-m4a,
+.exts-24.ext-m4b,
+.exts-24.ext-m4p,
+.exts-24.ext-m4r,
+.exts-24.ext-wma{
+    background-position: 0 -810px;
+    position: relative;
+}
+
+.ext-folder {
+    background-position: 0 -837px;
+    position: relative;
+}
+
+.exts-24.ext-folder {
+    background-position: 0 -632px;
+    position: relative;
+}
+.ext-folder.storage {
+    background-position: 0 -837px;
+    position: relative;
+}
+
+.exts-24.ext-folder.storage {
+    background-position: 0 -736px;
+    position: relative;
+}
+.ext-folder.setjob {
+    background-position: 0 -1027px;
+    position: relative;
+}
+
+.exts-24.ext-folder.setjob {
+    background-position: 0 -773px;
+    position: relative;
+}
+.ext-folder.setstg {
+    background-position: 0 -837px;
+    position: relative;
+}
+
+.exts-24.ext-folder.setstg {
+    background-position: 0 -773px;
+    position: relative;
+}
+
+.ext-pdf {
+    background-position: 0 -7px;
+    position: relative;
+}
+.ext-svg-pdf {
+    background-image: url('/Assets/app/img/exts-svg/icon_file_pdf.svg');
+}
+
+.exts-24.ext-pdf {
+    background-position: -1px -5px;
+    position: relative;
+}
+
+.ext-doc,
+.ext-docx {
+    background-position: 0 -63px;
+    position: relative;
+}
+.ext-svg-doc,
+.ext-svg-docx {
+    background-image: url('/Assets/app/img/exts-svg/icon_file_word.svg');
+}
+
+.exts-24.ext-doc,
+.exts-24.ext-docx {
+    background-position: 0 -47px;
+    position: relative;
+}
+
+.ext-xls,
+.ext-xlsx {
+    background-position: 0 -119px;
+    position: relative;
+}
+.ext-svg-xls,
+.ext-svg-xlsx {
+    background-image: url('/Assets/app/img/exts-svg/icon_file_excel.svg');
+}
+.exts-24.ext-xls,
+.exts-24.ext-xlsx {
+    background-position: 0 -89px;
+    position: relative;
+}
+
+.ext-png {
+    background-position: 0 -176px;
+    position: relative;
+}
+
+.exts-24.ext-png {
+    background-position: 0 -132px;
+    position: relative;
+}
+
+.ext-jpe,
+.ext-jpg,
+.ext-jpeg {
+    background-position: 0 -232px;
+    position: relative;
+}
+.ext-svg-jpe,
+.ext-svg-jpg,
+.ext-svg-jpeg,
+.ext-svg-svg,
+.ext-svg-png {
+    background-image: url('/Assets/app/img/exts-svg/icon-photo.svg');
+}
+
+.exts-24.ext-jpe,
+.exts-24.ext-jpg,
+.exts-24.ext-jpeg {
+    background-position: 0 -174px;
+    position: relative;
+}
+
+.ext-tif,
+.ext-tiff {
+    background-position: 0 -288px;
+    position: relative;
+}
+
+.exts-24.ext-tif,
+.exts-24.ext-tiff {
+    background-position: 0 -216px;
+    position: relative;
+}
+
+.ext-gif {
+    background-position: 0 -344px;
+    position: relative;
+}
+
+.exts-24.ext-gif {
+    background-position: 0 -258px;
+    position: relative;
+}
+
+.ext-rar {
+    background-position: 0 -400px;
+    position: relative;
+}
+
+.exts-24.ext-rar {
+    background-position: 0 -300px;
+    position: relative;
+}
+
+.ext-zip {
+    background-position: 0 -456px;
+    position: relative;
+}
+
+.ext-svg-rar,
+.ext-svg-zip {
+    background-image: url('/Assets/app/img/exts-svg/icon_file_zip.svg');
+}
+
+.exts-24.ext-zip {
+    background-position: 0 -342px;
+    position: relative;
+}
+
+.ext-bmp {
+    background-position: 0 -512px;
+    position: relative;
+}
+
+.exts-24.ext-bmp {
+    background-position: 0 -384px;
+    position: relative;
+}
+
+.ext-xml {
+    background-position: 0 -567px;
+    position: relative;
+}
+
+.exts-24.ext-xml {
+    background-position: 0 -425px;
+    position: relative;
+}
+
+.ext-xsl {
+    background-position: 0 -625px;
+    position: relative;
+}
+
+.exts-24.ext-xsl {
+    background-position: 0 -468px;
+    position: relative;
+}
+
+.ext-txt {
+    background-position: 0 -680px;
+    position: relative;
+}
+
+.exts-24.ext-txt {
+    background-position: 0 -510px;
+    position: relative;
+}
+
+.ext-htm,
+.ext-html {
+    background-position: 0 -736px;
+    position: relative;
+}
+
+.exts-24.ext-htm,
+.exts-24.ext-html {
+    background-position: 0 -552px;
+    position: relative;
+}
+
+.ext-ppt,
+.ext-pptx {
+    background-position: 0 -887px;
+    position: relative;
+}
+.ext-svg-ppt,
+.ext-svg-pptx {
+    background-image: url('/Assets/app/img/exts-svg/icon_file_powerpoint.svg');
+}
+.exts-24.ext-ppt,
+.exts-24.ext-pptx {
+    background-position: 0 -665px;
+    position: relative;
+}
+
+.circle {
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-name: spin;
+    animation-timing-function: linear;
+    
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+    background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+
+    border-radius: 50%;
+    display: inline-block;
+    height: 12px !important;
+    margin-right: 3px;
+    position: relative;
+    top: 1px !important;
+    width: 12px !important;
+}
+.icons {
+    background: url('/Assets/app/img/icons.png') no-repeat 0 0;
+    cursor: pointer;
+    display: inline-block !important;
+    position: relative;
+    top: 3px;
+    margin-right: 3px;
+    height: 32px;
+    width: 32px !important;
+}
+
+.icons-16 {
+    background: url('/Assets/app/img/icons-16.png') no-repeat 0 0;
+    cursor: pointer;
+    display: inline-block !important;
+    position: relative;
+    top: 3px;
+    margin-right: 3px;
+    height: 16px;
+    width: 16px !important;
+}
+
+.icons.wresize {
+    background-position: -247px -488px;
+    position: relative;
+    top: calc((50%) - 16px);
+    width: 5px;
+}
+
+.icon-folder-user {
+    background-position: -136px -33px;
+    position: relative;
+}
+.icon-v3dot {
+    background-position: -287px -587px;
+    position: relative;
+}
+.icons-16.icon-v3dot {
+    background-position: -142px -292px;
+    position: relative;
+}
+.icon-settings {
+    background-position: -384px -582px;
+    position: relative;
+}
+.icons-16.icon-settings {
+    background-position: -192px -291px;
+    position: relative;
+}
+
+.icon-roles {
+    background-position: -34px -440px;
+    position: relative;
+}
+
+.icons-16.icon-roles {
+    background-position: -17px -220px;
+    position: relative;
+}
+
+.icon-add-role {
+    background-position: -138px -440px;
+    position: relative;
+}
+
+.icons-16.icon-add-role {
+    background-position: -69px -220px;
+    position: relative;
+}
+
+.icon-book {
+    background-position: -136px -34px;
+    position: relative;
+}
+
+.icons-16.icon-book {
+    background-position: -68px -17px;
+    position: relative;
+}
+.icon-edit-role {
+    background-position: -82px -440px;
+    position: relative;
+}
+
+.icons-16.icon-edit-role {
+    background-position: -41px -220px;
+    position: relative;
+}
+
+.icon-cmt {
+    background-position: -186px -186px;
+    position: relative;
+}
+
+.icons-16.icon-cmt {
+    background-position: -93px -93px;
+    position: relative;
+}
+
+.icon-attach {
+    background-position: -388px -130px;
+    position: relative;
+}
+
+.icons-16.icon-attach {
+    background-position: -193px -67px;
+    position: relative;
+}
+.icon-attachplus {
+    background-position: -386px -130px;
+    position: relative;
+}
+
+.icons-16.icon-attachplus {
+    background-position: -218px -67px;
+    position: relative;
+}
+.icon-refresh {
+    background-position: -134px -132px;
+    position: relative;
+}
+
+.icons-16.icon-refresh {
+    background-position: -67px -66px;
+    position: relative;
+}
+
+.icon-remove-role {
+    background-position: -186px -440px;
+    position: relative;
+}
+
+.icons-16.icon-remove-role {
+    background-position: -93px -220px;
+    position: relative;
+}
+
+.icon-profiles {
+    background-position: -432px -330px;
+    position: relative;
+}
+
+.icons-16.icon-profiles {
+    background-position: -216px -165px;
+    position: relative;
+}
+
+.icon-add-profile {
+    background-position: -334px -332px;
+    position: relative;
+}
+
+.icons-16.icon-add-profile {
+    background-position: -167px -166px;
+    position: relative;
+}
+
+.icon-edit-profile {
+    background-position: -284px -332px;
+    position: relative;
+}
+
+.icons-16.icon-edit-profile {
+    background-position: -142px -166px;
+    position: relative;
+}
+
+.icon-remove-profile {
+    background-position: -384px -332px;
+    position: relative;
+}
+
+.icons-16.icon-remove-profile {
+    background-position: -192px -166px;
+    position: relative;
+}
+.icon-cert {
+    background-position: -433px -580px;
+    position: relative;
+}
+
+.icons-16.icon-cert {
+    background-position: -216px -290px;
+    position: relative;
+}
+
+.icon-collapses {
+    background-position: -387px -624px;
+    position: relative;
+}
+
+.icons-16.icon-collapses {
+    background-position: -194px -312px;
+    position: relative;
+}
+.icon-expanded {
+    background-position: -332px -624px;
+    position: relative;
+}
+
+.icons-16.icon-expanded {
+    background-position: -165px -312px;
+    position: relative;
+}
+
+.icon-module {
+    background-position: -333px -384px;
+    position: relative;
+}
+
+.icons-16.icon-module {
+    background-position: -166px -194px;
+    position: relative;
+}
+
+.icon-document {
+    background-position: -86px -233px;
+    position: relative;
+}
+
+.icon-user {
+    background-position: -237px -328px;
+    position: relative;
+}
+
+.icons-16.icon-user {
+    background-position: -118px -164px;
+    position: relative;
+}
+
+.icon-add-user {
+    background-position: -138px -330px;
+    position: relative;
+}
+
+.icons-16.icon-add-user {
+    background-position: -69px -164px;
+    position: relative;
+}
+
+.icon-edit-user {
+    background-position: -82px -330px;
+    position: relative;
+}
+
+.icons-16.icon-edit-user {
+    background-position: -41px -164px;
+    position: relative;
+}
+
+.icon-remove-user {
+    background-position: -186px -330px;
+    position: relative;
+}
+
+.icons-16.icon-remove-user {
+    background-position: -93px -164px;
+    position: relative;
+}
+
+.icon-password, .icon-lock, .icon-security {
+    background-position: -237px -383px;
+    position: relative;
+}
+
+.icon-download {
+    background-position: -384px -284px;
+    position: relative;
+}
+
+.icons-16.icon-download { background-position: -192px -142px; }
+
+.icon-downloadf {
+    background-position: -136px -586px;
+    position: relative;
+}
+
+.icons-16.icon-downloadf { background-position: -68px -293px; }
+
+.icon-ticks {
+    background-position: -234px -30px;
+    position: relative;
+}
+
+.icons-16.icon-ticks { background-position: -117px -15px; }
+
+.icon-view {
+    background-position: -237px -440px;
+    position: relative;
+}
+
+.icons-16.icon-view { background-position: -118px -220px; }
+
+.icon-edit-file {
+    background-position: -335px -284px;
+    position: relative;
+}
+
+.icons-16.icon-edit-file { background-position: -167px -143px; }
+
+.icon-add-file {
+    background-position: -236px -284px;
+    position: relative;
+}
+
+.icons-16.icon-add-file { background-position: -118px -143px; }
+
+.icon-copy {
+    background-position: -236px -284px;
+    position: relative;
+}
+
+.icons-16.icon-copy { background-position: -118px -143px; }
+
+.icon-up-file {
+    background-position: -436px -284px;
+    position: relative;
+}
+
+.icons-16.icon-up-file { background-position: -218px -143px; }
+
+.icon-cam {
+    background-position: -78px -584px;
+    position: relative;
+}
+
+.icons-16.icon-cam { background-position: -39px -292px; }
+
+.icon-scan {
+    background-position: -85px -83px;
+    position: relative;
+}
+
+.icons-16.icon-scan { background-position: -42px -41px; }
+
+.icon-todo{
+    background-position: -234px -624px;
+    position: relative;
+    float: none;
+}
+.icons-16.icon-todo {
+    float: none;
+    background-position: -119px -313px; 
+}
+.icon-progress{
+    background-position: -285px -624px;
+    position: relative;
+    float: none;
+}
+.icons-16.icon-progress {
+    float: none;
+    background-position: -143px -313px; 
+}
+.icon-done{
+    background-position: -184px -624px;
+    position: relative;
+    float: none;
+}
+.icons-16.icon-done {
+    float: none;
+    background-position: -92px -313px; 
+}
+
+.icon-file {
+    background-position: -36px -332px;
+    position: relative;
+    float: none;
+}
+.icons-16.icon-file {
+    float: none;
+    background-position: -16px -166px; 
+}
+
+.icon-edit-folder {
+    background-position: -184px -284px;
+    position: relative;
+}
+
+.icons-16.icon-edit-folder { background-position: -92px -142px; }
+
+.icon-add-folder {
+    background-position: -83px -286px;
+    position: relative;
+}
+
+.icons-16.icon-add-folder { background-position: -41px -142px; }
+
+.icon-remove-file {
+    background-position: -286px -284px;
+    position: relative;
+}
+
+.icons-16.icon-remove-file { background-position: -143px -143px; }
+
+.icon-remove-folder {
+    background-position: -136px -284px;
+    position: relative;
+}
+
+.icons-16.icon-remove-folder { background-position: -68px -142px; }
+
+.icon-move {
+    background-position: -332px -440px;
+    position: relative;
+}
+
+.icons-16.icon-move { background-position: -166px -220px; }
+
+.icon-dragdrop {
+    background-position: -332px -488px;
+    position: relative;
+}
+
+.icons-16.icon-dragdrop { background-position: -166px -244px; }
+
+.icon-folder {
+    background-position: -36px -281px;
+    position: relative;
+}
+
+.icons-16.icon-folder { background-position: -18px -140px; }
+
+.icon-forward {
+    background-position: -284px -440px;
+    position: relative;
+}
+
+.icons-16.icon-forward { background-position: -142px -221px; }
+
+.icon-trash { background-position: -430px -440px; }
+
+.icons-16.icon-trash { background-position: -215px -220px; }
+
+.icon-perm { background-position: -430px -383px; }
+
+.icons-16.icon-perm { background-position: -215px -191px; }
+
+.icon-save { background-position: -36px -232px; }
+
+.icons-16.icon-save { background-position: -18px -116px; }
+
+.icon-editing { background-position: -237px -185px; }
+
+.icons-16.icon-editing { background-position: -118px -92px; }
+
+.icon-favourite { background-position: -135px -82px; }
+
+.icons-16.icon-favourite { background-position: -68px -41px; }
+
+.icon-add-favourite { background-position: -385px -488px; }
+
+.icons-16.icon-add-favourite { background-position: -192px -244px; }
+
+.icon-remove-favourite { background-position: -434px -488px; }
+
+.icons-16.icon-remove-favourite { background-position: -217px -244px; }
+
+.icon-recent { background-position: -386px -82px; }
+
+.icons-16.icon-recent { background-position: -193px -41px; }
+
+.icon-search { background-position: -186px -82px; }
+
+.icons-16.icon-search { background-position: -93px -41px; }
+
+.icon-undo { background-position: -234px -132px; }
+
+.icons-16.icon-undo { background-position: -117px -66px; }
+
+.icon-success { background-position: -284px -134px; }
+
+.icons-16.icon-success { background-position: -142px -67px; }
+
+.icon-fail { background-position: -334px -134px; }
+
+.icons-16.icon-fail { background-position: -167px -67px; }
+
+.icon-compare { background-position: -286px -233px; }
+
+.icons-16.icon-compare { background-position: -143px -117px; }
+
+.icon-share { background-position: -34px -534px; }
+
+.icons-16.icon-share { background-position: -17px -267px; }
+
+.icon-add-share { background-position: -80px -534px; }
+
+.icons-16.icon-add-share { background-position: -40px -267px; }
+
+.icon-edit-share { background-position: -184px -534px; }
+
+.icons-16.icon-edit-share { background-position: -92px -267px; }
+
+.icon-remove-share { background-position: -136px -534px; }
+
+.icons-16.icon-remove-share { background-position: -68px -267px; }
+
+.icon-user-share { background-position: -382px -380px; }
+
+.icons-16.icon-user-share { background-position: -191px -190px; }
+
+.icon-shared { background-position: -238px -534px; }
+
+.icons-16.icon-shared { background-position: -119px -267px; }
+
+.icon-accesslog { background-position: -285px -534px; }
+
+.icons-16.icon-accesslog { background-position: -142px -267px; }
+
+.icon-report { background-position: -33px -133px; }
+
+.icons-16.icon-report { background-position: -17px -67px; }
+
+.icons.icon-workflow {
+    /*background-position: -137px -232px;*/
+    background-color: #4cc5f3;
+    background-image: none;
+    border-radius: 50%;
+    height: 10px !important;
+    margin: 12px 12px 12px 2px !important;
+    width: 10px !important;
+}
+
+.icons-16.icon-workflow { background-position: -68px -116px; }
+
+.icon-workadd { background-position: -384px -32px; }
+
+.icons-16.icon-workadd { background-position: -193px -16px; }
+
+.icon-work { background-position: -334px -535px; }
+
+.icons-16.icon-work { background-position: -167px -267px; }
+
+.icon-work-1 { background-position: -384px -536px; }
+
+.icons-16.icon-work-1 { background-position: -192px -268px; }
+
+.icon-work-2 { background-position: -284px -32px; }
+
+.icons-16.icon-work-2 { background-position: -142px -16px; }
+
+.icon-plus { background-position: -35px 5px; }
+
+.icons-16.icon-plus { background-position: -18px 2px; }
+
+.icon-minus { background-position: -84px 5px; }
+
+.icons-16.icon-minus { background-position: -42px 2px; }
+
+.icon-date { background-position: -385px -440px; }
+
+.icons-16.icon-date { background-position: -192px -220px; }
+
+.icon-priority { background-position: -336px -236px; }
+
+.icons-16.icon-priority { background-position: -168px -118px; }
+
+.icon-up { background-position: -336px 5px; }
+
+.icons-16.icon-up { background-position: -168px 2px; }
+
+.icon-down { background-position: -286px 6px; }
+
+.icons-16.icon-down { background-position: -143px 3px; }
+
+.icon-user-group {
+    background-position: -33px -585px;
+    position: relative;
+}
+
+.icons-16.icon-user-group {
+    background-position: -16px -292px;
+    position: relative;
+}
+
+.icon-dept {
+    background-position: -433px -536px;
+    position: relative;
+}
+
+.icons-16.icon-dept {
+    background-position: -216px -268px;
+    position: relative;
+}
+
+.icon-hier {
+    background-position: -134px -486px;
+    position: relative;
+}
+
+.icons-16.icon-hier {
+    background-position: -67px -243px;
+    height: 20px;
+    margin: 0 !important;
+    padding: 0;
+    position: relative;
+    width: 18px;
+}
+
+.icon-org {
+    background-position: -78px -486px;
+    position: relative;
+}
+
+.icons-16.icon-org {
+    background-position: -39px -243px;
+    height: 20px;
+    margin: 0 !important;
+    padding: 0;
+    position: relative;
+    width: 18px;
+}
+.icon-ocr {
+    background-position: -436px -621px;
+    position: relative;
+}
+.icons-16.icon-ocr {
+    background-position: -218px -312px;
+    position: relative;
+}
+.icon-hide{
+    background-position: -136px -628px;
+    position: relative;
+}
+.icons-16.icon-hide{
+    background-position: -68px -313px;
+    position: relative;
+}
+.icon-doctype{
+    background-position: -80px -676px;
+    position: relative;
+}
+.icons-16.icon-doctype{
+    background-position: -40px -338px;
+    position: relative;
+}
+.blockitem.none .icon-hide{
+    background-position: -80px -628px;
+    position: relative;
+}
+.blockitem.none .icons-16.icon-hide{
+    background-position: -40px -313px;
+    position: relative;
+}
+.icon-zoom-out {
+    background-position: -182px -586px;
+    position: relative;
+    margin: 0;
+    top: 0;
+}
+.zooming .icon-zoom-out { background-position: -236px -586px; }
+
+.icons-16.icon-zoom-out { 
+    background-position: -16px -338px;
+    margin: 0;
+    top: 0; 
+}
+.zooming .icons-16.icon-zoom-out { background-position: -16px -313px; }
+
+.icon-notify {
+    background-position: -185px -186px;
+    position: relative;
+}
+
+.icons-16.icon-notify {
+    background-position: -92px -93px;
+    position: relative;
+}
+
+.icon-menu {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+    margin-right: 10px;
+    width: 32px;
+}
+
+.icon-menu.icon-favourite { background-image: url('/Assets/app/img/menu/icon-favourite.png') }
+
+.icon-menu.icon-group { background-image: url('/Assets/app/img/menu/icon-group.png') }
+
+.icon-menu.icon-msg { background-image: url('/Assets/app/img/menu/icon-msg.png') }
+
+.icon-menu.icon-notify { background-image: url('/Assets/app/img/menu/icon-notify.png') }
+
+.icon-menu.icon-myfriend { background-image: url('/Assets/app/img/menu/icon-myfriend.png') }
+
+.icon-menu.icon-mygroup { background-image: url('/Assets/app/img/menu/icon-mygroup.png') }
+
+.icon-menu.icon-myexecute { background-image: url('/Assets/app/img/menu/icon-myexecute.png') }
+
+.icon-menu.icon-myfile { background-image: url('/Assets/app/img/menu/icon-myfile.png') }
+
+.icon-menu.icon-mywork { background-image: url('/Assets/app/img/menu/icon-mywork.png') }
+
+.icon-menu.icon-org { background-image: url('/Assets/app/img/menu/icon-org.png') }
+
+.icon-menu.icon-perm { background-image: url('/Assets/app/img/menu/icon-perm.png') }
+
+.icon-menu.icon-recent { background-image: url('/Assets/app/img/menu/icon-recent.png') }
+
+.icon-menu.icon-doctype { background-image: url('/Assets/app/img/menu/icon-doctype.png') }
+
+.icon-menu.icon-storage { background-image: url('/Assets/app/img/menu/icon-storage.png') }
+
+.icon-menu.icon-role { background-image: url('/Assets/app/img/menu/icon-role.png') }
+
+.icon-menu.icon-share { background-image: url('/Assets/app/img/menu/icon-share.png') }
+
+.icon-menu.icon-user { background-image: url('/Assets/app/img/menu/icon-user.png') }
+
+.icon-menu.icon-workflow { background-image: url('/Assets/app/img/menu/icon-workflow.png') }
+
+.icon-menu.icon-report { background-image: url('/Assets/app/img/menu/icon-report.png') }
+
+.icon-menu.icon-log { background-image: url('/Assets/app/img/menu/icon-log.png') }
+
+.icon-menu.icon-license { background-image: url('/Assets/app/img/menu/icon-license.png') }
+
+.icon-taskbar {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    height: 24px;
+    margin-right: 10px;
+    width: 24px;
+}
+.icon-taskbar.icon-favourite { background-image: url('/Assets/app/img/menu/icon-favourite.png') }
+
+.icon-taskbar.icon-group { background-image: url('/Assets/app/img/menu/icon-group.png') }
+
+.icon-taskbar.icon-msg { background-image: url('/Assets/app/img/menu/icon-msg.png') }
+
+.icon-taskbar.icon-notify { background-image: url('/Assets/app/img/menu/icon-notify.png') }
+
+.icon-taskbar.icon-myexecute { background-image: url('/Assets/app/img/menu/icon-myexecute.png') }
+
+.icon-taskbar.icon-myfile { background-image: url('/Assets/app/img/menu/icon-myfile.png') }
+
+.icon-taskbar.icon-mywork { background-image: url('/Assets/app/img/menu/icon-mywork.png') }
+
+.icon-taskbar.icon-org { background-image: url('/Assets/app/img/menu/icon-org.png') }
+
+.icon-taskbar.icon-perm { background-image: url('/Assets/app/img/menu/icon-perm.png') }
+
+.icon-taskbar.icon-recent { background-image: url('/Assets/app/img/menu/icon-recent.png') }
+
+.icon-taskbar.icon-doctype { background-image: url('/Assets/app/img/menu/icon-doctype.png') }
+
+.icon-taskbar.icon-storage { background-image: url('/Assets/app/img/menu/icon-storage.png') }
+
+.icon-taskbar.icon-role { background-image: url('/Assets/app/img/menu/icon-role.png') }
+
+.icon-taskbar.icon-share { background-image: url('/Assets/app/img/menu/icon-share.png') }
+
+.icon-taskbar.icon-user { background-image: url('/Assets/app/img/menu/icon-user.png') }
+
+.icon-taskbar.icon-workflow { background-image: url('/Assets/app/img/menu/icon-workflow.png') }
+
+.icon-taskbar.icon-report { background-image: url('/Assets/app/img/menu/icon-report.png') }
+
+.icon-taskbar.icon-log { background-image: url('/Assets/app/img/menu/icon-log.png') }
+
+.icon-taskbar.icon-license { background-image: url('/Assets/app/img/menu/icon-license.png') }
+
+.icon-taskbar.icon-myfriend { background-image: url('/Assets/app/img/menu/icon-myfriend.png') }
+
+.icon-taskbar.icon-mygroup { background-image: url('/Assets/app/img/menu/icon-mygroup.png') }
+
+.icon-list {
+    background: url("/Assets/app/img/icon-list.png") no-repeat scroll center center transparent;
+    display: block;
+    height: 18px;
+    width: 18px;
+}
+
+body .icon-computer {
+    background: url("/Assets/app/img/computer.png") no-repeat center center;
+    display: inline-block;
+    vertical-align: middle;
+    height: 48px;
+    width: 48px;
+}
+
+body .icon-share2 {
+    background: url("/Assets/app/img/share.png") no-repeat center center;
+    display: inline-block;
+    vertical-align: middle;
+    height: 48px;
+    width: 48px;
+}

@@ -1,0 +1,84 @@
+﻿.recent{
+    padding: 5px 0;
+    display: inline-block;
+    float: none;
+    border-bottom: 1px solid #eee;
+}
+.recent:last-child{
+    border-bottom: none;
+}
+.recent .recent_icon{
+    padding: 0;
+}
+.recent .recent_link{
+    padding: 0;
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.notifies{
+    max-height: 300px;
+}
+.ntfs{
+
+}
+.ntfit{
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    overflow: hidden;
+    padding: 5px 0;
+    position: relative;
+    width: 100%;
+    font-size: 11px;
+    float: left;
+}
+.ntfit.unread{
+    background-color: #FFFFAA;
+}
+.ntflf{
+    display: inline-block;
+    float: left;
+    height: 55px;
+    line-height: 55px;
+    margin: 0 0 0 20px;
+    vertical-align: middle;
+    width: 30px;
+}
+.ntfrt{
+    float: left;
+    overflow: hidden;
+    padding: 0 15px;
+    float: left;
+    text-align: justify;
+    width: calc((100%) - 50px);
+}
+.ntfct{
+    display: inline-block;
+    line-height: 18px;
+    white-space: normal;
+    width: 100%;
+    float: left;
+    text-align: left !important;
+    color: #000;
+}
+.ntfat{
+    clear: both;
+    color: gray;
+    display: block;
+    float: left;
+    font-size: 9px;
+    line-height: 20px;
+}
+.ntfit .avatar{
+    float: left;
+    margin-top: 3px;
+    vertical-align: middle;
+}
+.ntfit .avatar img{
+    float: left;
+}
+.ntfit a{
+    color: #4cc5f3;
+    font-weight: bold;
+}

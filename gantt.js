@@ -1,20 +1,23 @@
 (function ($) {
-	$.fn.gantt = function (options) {
+	$.fn.gantt = function (data, options) {
 		var defaults = {};
-		var opts = $.extend({}, defaults, options);
-		var gantt = new Gantt(opts);
+		options = $.extend({}, defaults, options);
+		var gantt = new Gantt(data, options);
 		this.length && gantt.build();
 	};
 })(jQuery);
 
 class Gantt {
 	'use strict';
-	constructor(option) {
-		this.option = option;
-		this.default = [];
+	constructor(data, options) {
+		this.data = data;
+		this.options = options;
 	}
 	build() {
-		console.log(this.option);
+		console.log(this.options);
+	}
+	getUserData() {
+		console.log(this.data);
 	}
 	countOccurrences(arr, val) {
 		arr.reduce((a, v) => (v === val ? a + 1 : a), 0);

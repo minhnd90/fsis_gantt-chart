@@ -1,0 +1,88 @@
+.form-cmts textarea{
+    border-radius: 5px;
+    height: 50px;
+    line-height: 20px;
+    padding: 5px;
+    width: 100%;
+}
+.form-cmts .cmt-avt{
+    width: 55px;
+    height: 45px;
+    float: left;
+    overflow: hidden;
+}
+.form-cmts .cmt-avt a{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: block;
+    height: 41px;
+    overflow: hidden;
+    width: 41px;
+}
+.form-cmts .cmt-cnt{
+    max-width: 50%;
+    border-radius: 5px;
+    float: left;
+    min-height: 45px;
+    padding: 3px 10px;
+    position: relative;
+}
+.form-cmts .cmt{
+    margin-bottom: 15px;
+}
+.form-cmts .cnt{
+    width: 100%;
+    display: block;
+}
+.form-cmts .time{
+    font-size: smaller;
+    color: gray;
+}
+.form-cmts .writer{
+    color: gray;
+    font-weight: normal;
+}
+.form-cmts .arrow{
+    border-color: #fff #f4f4f4 #fff #fff;
+    border-style: solid;
+    border-width: 10px 5px 0 0;
+    display: block;
+    height: 10px;
+    left: -10px;
+    position: absolute;
+    top: 14px;
+    width: 10px;
+}
+.pane-cmt h3{
+    margin: 10px 0 20px;
+}
+.pane-cmt{
+    background-color: #ededed !important;
+}
+.pane-cmt .row{
+    background-color: #ededed !important;
+}
+.pane-cmt .cmts .row{
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px;
+}
+.pane-cmt .cmt-cnt{
+    background-color: #fff;
+}
+.pane-cmt .arrow{
+    border-color: #ededed #fff #ededed #ededed;
+}
+.pane-cmt .cmts{
+    height: calc((100%) - 150px);
+    position: absolute;
+    width: calc((100%) - 30px);
+    border: 1px solid #ccc;
+}
+.pane-cmt .form-cmts{
+    height: calc((100%) - 15px);
+    position: absolute;
+}
+.timeline-comment-item .cmt-content{
+    white-space: pre-wrap;
+}

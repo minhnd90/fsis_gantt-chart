@@ -1,0 +1,19 @@
+﻿/*======== IE VERSION 10 ========*/
+body.ie10 .form-login .remember input[type=checkbox], 
+body.ie10 .form-login .remember input[type=radio] {
+    top: -2px !important;
+}
+body.ie10 .dataTables_filter label select.input-sm{
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+body.ie10 .dataTables_filter .checkbox label {
+    top: -6px;
+}
+.btn.delFiles .icons-16.icon-remove-file, .btn.delFile .icons-16.icon-remove-file{
+	line-height: 1.4 !important;
+}
+ul.ui-widget{
+	display: none;
+}

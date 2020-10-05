@@ -1,0 +1,77 @@
+﻿.tasks-list{
+    min-height: 150px;
+}
+.widget-header .btn-searchs{
+    display: inline-block;
+    float: right;
+    margin-top: 4px;
+}
+.attach-file-item .deleteFile{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+.attach-file-item:hover .deleteFile{
+    display: block;
+}
+.jobitem.ui-draggable-dragging{
+    box-shadow: 0 1px 5px 1px #ccc;
+    display: inline-block;
+    float: left;
+    list-style: outside none none;
+    margin: 10px;
+    padding: 0 10px 10px;
+}
+body .task-item {
+    position: relative;
+    height: 150px;
+    border-bottom: 1px solid #e5e5e5;
+}
+body .task-item .task-check {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    margin-right: 5px;
+}
+body .task-item .task-state {
+    position: absolute;
+    top: 19px;
+    left: 45px;
+}
+body .task-item .task-time {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 11px;
+    color: #999;
+}
+body .task-item .task-body {
+    position: absolute;
+    top: 60px;
+    left: 45px;
+    padding-right: 25px;
+    height: 40px;
+    overflow: hidden;
+    line-height: 22px;
+}
+body .task-item .task-creator {
+    position: absolute;
+    top: 115px;
+    left: 45px;
+}
+body .task-item .task-assignedto {
+    position: absolute;
+    top: 115px;
+    right: 20px;
+    font-size: 13px;
+    color: #999;
+}
+.timeline.onlycol {
+    column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;        
+    column-gap: 0;
+    -webkit-column-gap: 0;
+    -moz-column-gap: 0;    
+}
